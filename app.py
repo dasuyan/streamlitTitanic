@@ -37,16 +37,16 @@ def main():
         fare_slider = st.slider("Cena biletu", min_value=0, max_value=500, step=10)
 
     data = {
-        'pclass': pclass_ratio,
-        'age': age_slider,
-        'sibsp': sibsp_slider,
-        'parch': parch_slider,
-        'fare': fare_slider,
-        'embarked': embarked_ratio,
+        'Pclass': pclass_ratio,
+        'Age': age_slider,
+        'Sibsp': sibsp_slider,
+        'Parch': parch_slider,
+        'Fare': fare_slider,
+        'Embarked': embarked_ratio,
         'male': sex_ratio,
     }
 
-    data_for_prediction = [[data[key] for key in ['pclass', 'age', 'sibsp', 'parch', 'fare', 'embarked', 'male']]]
+    data_for_prediction = [[data[key] for key in ['Pclass', 'Age', 'Sibsp', 'Parch', 'Fare', 'Embarked', 'male']]]
 
     survival = model.predict(data_for_prediction)[0]
     s_confidence = model.predict_proba(data_for_prediction)[0]
